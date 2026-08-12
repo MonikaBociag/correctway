@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio – realizacje korekty i redakcji | Correct Way</title>
+<meta name="description" content="Wybrane teksty i publikacje, nad którymi pracowałam jako korektorka i redaktorka – tomik poezji „Poza horyzontem. Wiersze" i magazyn o planszówkach Planeta Mepli.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://correctway.pl/portfolio.html">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pl_PL">
+<meta property="og:site_name" content="Correct Way">
+<meta property="og:title" content="Portfolio – realizacje korekty i redakcji | Correct Way">
+<meta property="og:description" content="Wybrane teksty i publikacje, nad którymi pracowałam jako korektorka i redaktorka.">
+<meta property="og:url" content="https://correctway.pl/portfolio.html">
+<meta property="og:image" content="https://correctway.pl/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Portfolio – Correct Way",
+  "url": "https://correctway.pl/portfolio.html",
+  "description": "Wybrane realizacje korekty i redakcji tekstów.",
+  "mainEntity": [
+    {
+      "@type": "Book",
+      "name": "Poza horyzontem. Wiersze",
+      "author": { "@type": "Person", "name": "Angela Fox" },
+      "genre": "poezja",
+      "inLanguage": "pl",
+      "url": "https://nakanapie.pl/ksiazka/poza-horyzontem-wiersze",
+      "publisher": { "@type": "Organization", "name": "DC Books" }
+    },
+    {
+      "@type": "Periodical",
+      "name": "Planeta Mepli",
+      "description": "Bezpłatny magazyn o grach planszowych tworzony przez graczy dla graczy.",
+      "inLanguage": "pl",
+      "url": "https://planetamepli.pl/"
+    }
+  ]
+}
+</script>
+
+<style>
+  /* ============================================================
+     DESIGN TOKENS – wg mini brandbooka Correct Way v1.0
+  ============================================================= */
+  :root {
+    --graphite:   #17191C;   /* Correct Graphite */
+    --gold:       #DBA540;   /* Correct Gold – akcent, nie tło całych sekcji */
+    --gold-deep:  #8B671B;   /* Deep Gold – linki i focus */
+    --cream:      #F7F3EA;   /* Warm Cream */
+    --white:      #FFFFFF;
+    --gray:       #6E7378;   /* Neutral Gray */
+    --border:     #D7D4CE;   /* Border Gray */
+    --soft:       #F1EFEA;   /* Soft Gray */
+
+    --max: 1180px;           /* maks. szerokość treści */
+    --r-card: 18px;          /* promień kart */
+    --r-btn: 10px;           /* promień przycisków */
+    --shadow: 0 2px 14px rgba(23,25,28,.05);
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
+  body {
+    margin: 0;
+    font-family: 'Inter', -apple-system, 'Segoe UI', sans-serif;
+    font-size: 17px; line-height: 1.7;
+    color: var(--graphite); background: var(--white);
+  }
+  h1, h2, h3 { font-weight: 600; line-height: 1.25; margin: 0 0 16px; letter-spacing: -0.01em; }
+  p { margin: 0 0 16px; }
+  a { color: var(--gold-deep); text-decoration: underline; text-underline-offset: 3px; }
+  a:hover { color: var(--graphite); }
+  :focus-visible { outline: 3px solid var(--gold-deep); outline-offset: 3px; border-radius: 4px; }
+
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+  section { padding: 96px 0; }
+  .band-cream { background: var(--cream); }
+  .band-graphite { background: var(--graphite); color: var(--white); }
+  .band-graphite h2, .band-graphite h3 { color: var(--white); }
+  .band-graphite .lead, .band-graphite p { color: #D9DBDD; }
+
+  /* Typografia wg tabeli hierarchii */
+  .h1 { font-size: clamp(38px, 5vw, 60px); font-weight: 700; }
+  .h2 { font-size: clamp(28px, 3.4vw, 42px); }
+  .h3 { font-size: 24px; }
+  .lead { font-size: 19px; max-width: 62ch; color: #3B3F44; }
+  .label {
+    font-size: 13px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase;
+    color: var(--gold-deep); margin-bottom: 16px; display: block;
+  }
+  .band-graphite .label { color: var(--gold); }
+  .muted { color: var(--gray); }
+  .gold-text { color: var(--gold-deep); }
+  .band-graphite .gold-text { color: var(--gold); }
+
+  /* ---------- Skip link ---------- */
+  .skip {
+    position: absolute; left: 16px; top: -60px; z-index: 100;
+    background: var(--graphite); color: var(--white);
+    padding: 12px 20px; border-radius: var(--r-btn); text-decoration: none; font-weight: 600;
+    transition: top .15s ease;
+  }
+  .skip:focus { top: 12px; color: var(--white); }
+
+  /* ---------- Nagłówek ---------- */
+  .site-header {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(255,255,255,.96); backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--border);
+  }
+  .site-header .wrap { display: flex; align-items: center; justify-content: space-between; height: 80px; gap: 24px; }
+  .nav { display: flex; gap: 28px; align-items: center; }
+  .nav a { text-decoration: none; color: var(--graphite); font-weight: 500; font-size: 15.5px; }
+  .nav a:hover { color: var(--gold-deep); }
+  .nav-toggle { display: none; }
+  @media (max-width: 900px) {
+    .nav-toggle {
+      display: flex; flex-direction: column; justify-content: center; gap: 5px;
+      width: 46px; height: 46px; padding: 10px;
+      background: none; border: 1px solid var(--border); border-radius: var(--r-btn); cursor: pointer;
+    }
+    .nav-toggle span { display: block; height: 2px; background: var(--graphite); border-radius: 2px; transition: transform .2s ease, opacity .2s ease; }
+    .nav-open .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-open .nav-toggle span:nth-child(2) { opacity: 0; }
+    .nav-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .nav {
+      display: none;
+      position: absolute; left: 0; right: 0; top: 100%;
+      flex-direction: column; align-items: stretch; gap: 0;
+      background: var(--white); border-bottom: 1px solid var(--border);
+      padding: 8px 24px 20px;
+      box-shadow: 0 12px 24px rgba(23,25,28,.08);
+    }
+    .nav-open .nav { display: flex; }
+    .nav a:not(.btn) { padding: 14px 4px; border-bottom: 1px solid var(--soft); font-size: 17px; }
+    .nav .btn { margin-top: 16px; text-align: center; }
+  }
+
+  /* ---------- Logo (oryginalna grafika marki) ---------- */
+  .logo { display: inline-flex; align-items: center; text-decoration: none; }
+  .logo img { height: 54px; width: auto; display: block; }
+  @media (max-width: 900px) { .logo img { height: 44px; } }
+
+  /* ---------- Przyciski ---------- */
+  .btn {
+    display: inline-block; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 16px;
+    background: var(--gold); color: var(--graphite);
+    padding: 15px 30px; border-radius: var(--r-btn); border: 0; cursor: pointer;
+    text-decoration: none;
+    transition: background-color .18s ease;
+  }
+  .btn:hover { background: #C9942F; color: var(--graphite); }
+  .btn--outline {
+    background: transparent; color: var(--graphite);
+    box-shadow: inset 0 0 0 1px var(--graphite);
+  }
+  .btn--outline:hover { background: var(--soft); color: var(--graphite); }
+  .band-graphite .btn--outline { color: var(--white); box-shadow: inset 0 0 0 1px rgba(255,255,255,.5); }
+  .band-graphite .btn--outline:hover { background: rgba(255,255,255,.08); color: var(--white); }
+  .nav .btn { font-size: 15px; padding: 12px 22px; }
+
+  /* ---------- Pasek: media ---------- */
+  .media-strip { background: var(--cream); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .media-strip .wrap {
+    display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap;
+    padding-top: 18px; padding-bottom: 18px; text-align: center;
+  }
+  .media-strip p { margin: 0; font-size: 15.5px; color: #3B3F44; }
+  .media-strip .tag {
+    font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--gold-deep); border: 1px solid var(--gold); border-radius: 999px; padding: 4px 12px; flex: none;
+  }
+
+  /* ---------- CTA w środku strony ---------- */
+  .mid-cta { text-align: center; margin-top: 56px; }
+
+  /* ---------- Hero ---------- */
+  .hero { padding: 80px 0 96px; }
+  .hero-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(300px, .9fr); gap: 64px; align-items: center; }
+  .hero-cta { margin-top: 32px; display: flex; gap: 16px; flex-wrap: wrap; }
+  .hero-note { font-size: 15px; color: var(--gray); margin-top: 20px; max-width: 52ch; }
+
+  .portrait { justify-self: center; width: 100%; }
+  .portrait-frame {
+    width: 100%; max-width: 420px; aspect-ratio: 4/5; margin: 0 auto;
+    border-radius: var(--r-card); overflow: hidden; background: var(--soft);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .portrait-frame img { width: 100%; height: 100%; object-fit: cover; }
+  .portrait-traits {
+    text-align: center; margin: 16px 0 0; font-size: 14px; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--gray); font-weight: 500;
+  }
+
+  /* ---------- Sekcje wyśrodkowane ---------- */
+  .center { text-align: center; }
+  .center .lead, .center .label, .center .muted { margin-left: auto; margin-right: auto; }
+  .center .steps, .center .pricing, .center .faq { margin-left: auto; margin-right: auto; text-align: left; }
+  .center .pricing h3 { text-align: center; }
+
+  /* ---------- „Znasz to?" ---------- */
+  .empathy-inner { max-width: 740px; margin: 0 auto; }
+  .empathy-inner p { font-size: 18.5px; }
+  .empathy-turn {
+    margin-top: 32px; padding-top: 32px; border-top: 1px solid var(--border);
+    font-size: 20px; font-weight: 500; color: var(--graphite);
+  }
+  .band-graphite .empathy-turn { border-top-color: rgba(255,255,255,.18); color: var(--white); }
+  .band-graphite em { color: var(--gold); font-style: normal; font-weight: 600; }
+
+  /* ---------- Karty: poprawiam / nie odbieram ---------- */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 40px; }
+  .card {
+    background: var(--white); border: 1px solid var(--border); border-radius: var(--r-card);
+    padding: 32px; box-shadow: var(--shadow);
+  }
+  .card--soft { background: var(--soft); }
+  .checklist { margin: 16px 0 0; padding: 0; list-style: none; }
+  .checklist li { padding: 8px 0 8px 34px; position: relative; }
+  .checklist li::before {
+    content: ""; position: absolute; left: 0; top: 13px;
+    width: 18px; height: 10px;
+    border-left: 2px solid var(--gold); border-bottom: 2px solid var(--gold);
+    transform: rotate(-45deg);
+  }
+  .checklist--dir li::before {
+    content: "→"; border: 0; transform: none; top: 8px; width: auto; height: auto;
+    color: var(--gold-deep); font-weight: 600;
+  }
+  .statement { margin-top: 32px; font-size: 22px; font-weight: 500; max-width: 46ch; line-height: 1.5; }
+
+  /* ---------- Oferta ---------- */
+  .offer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 40px; }
+  .offer {
+    background: var(--white); border: 1px solid var(--border); border-radius: var(--r-card);
+    padding: 32px; box-shadow: var(--shadow);
+  }
+  .offer-icon { color: var(--gold-deep); margin-bottom: 16px; display: block; }
+  .offer .for {
+    display: block; font-size: 12.5px; font-weight: 600; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--gray); margin-bottom: 8px;
+  }
+  .offer h3 { font-size: 22px; }
+  .offer p { font-size: 16px; color: #3B3F44; margin-bottom: 0; }
+  .types { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin: 36px 0 44px; }
+  .type { border-top: 2px solid var(--gold); padding-top: 14px; }
+  .type h3 { font-size: 17px; margin-bottom: 6px; }
+  .type p { font-size: 14.5px; color: var(--gray); margin: 0; }
+  .offer .who { font-size: 15px; color: var(--gray); font-style: italic; margin: 4px 0 12px; }
+  .offer-list { margin: 0 0 14px; padding: 0; list-style: none; }
+  .offer-list li { padding: 5px 0 5px 26px; position: relative; font-size: 15.5px; color: #3B3F44; }
+  .offer-list li::before {
+    content: ""; position: absolute; left: 0; top: 11px;
+    width: 14px; height: 8px;
+    border-left: 2px solid var(--gold); border-bottom: 2px solid var(--gold);
+    transform: rotate(-45deg);
+  }
+  .offer .effect { font-size: 15.5px; margin: 0; padding-top: 12px; border-top: 1px solid var(--border); }
+  .offer .effect strong { color: var(--gold-deep); }
+  .rules { margin: 28px 0 0; padding: 0; list-style: none; counter-reset: rule; }
+  .rules li { counter-increment: rule; padding: 10px 0 10px 44px; position: relative; font-size: 16px; color: #D9DBDD; }
+  .rules li strong { color: var(--white); }
+  .rules li::before {
+    content: counter(rule);
+    position: absolute; left: 0; top: 8px;
+    width: 30px; height: 30px; border-radius: 50%;
+    border: 1px solid var(--gold); color: var(--gold);
+    font-weight: 600; font-size: 15px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .formats { margin-top: 32px; font-size: 15.5px; color: var(--gray); }
+  .formats span {
+    display: inline-block; border: 1px solid var(--border); border-radius: 999px;
+    padding: 5px 16px; margin: 6px 8px 0 0; color: var(--graphite); font-size: 14.5px; font-weight: 500;
+  }
+  .not-included {
+    margin-top: 48px; background: var(--cream); border-radius: var(--r-card);
+    padding: 32px; max-width: 800px; border-left: 3px solid var(--gold);
+  }
+  .not-included ul { margin: 12px 0 0; padding-left: 22px; }
+  .not-included li { margin-bottom: 8px; font-size: 16px; }
+
+  /* ---------- Proces ---------- */
+  .steps { counter-reset: step; margin: 44px 0 0; padding: 0; list-style: none; max-width: 720px; }
+  .steps li { counter-increment: step; position: relative; padding: 0 0 32px 72px; }
+  .steps li::before {
+    content: counter(step);
+    position: absolute; left: 0; top: 0;
+    width: 44px; height: 44px; border-radius: 50%;
+    background: var(--white); border: 1px solid var(--border); color: var(--gold-deep);
+    font-weight: 600; font-size: 17px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .steps li:not(:last-child)::after {
+    content: ""; position: absolute; left: 22px; top: 50px; bottom: 2px;
+    width: 1px; background: var(--border);
+  }
+  .steps h3 { font-size: 20px; margin-bottom: 4px; }
+  .steps p { margin: 0; color: #3B3F44; font-size: 16.5px; }
+
+  .pricing { margin-top: 56px; max-width: 760px; }
+  .pricing ul { margin: 16px 0 0; padding: 0; list-style: none; }
+  .pricing li { padding: 8px 0 8px 34px; position: relative; }
+  .pricing li::before {
+    content: ""; position: absolute; left: 0; top: 13px;
+    width: 18px; height: 10px;
+    border-left: 2px solid var(--gold); border-bottom: 2px solid var(--gold);
+    transform: rotate(-45deg);
+  }
+  .pricing .note { margin-top: 24px; font-size: 16px; color: var(--gray); }
+
+  /* ---------- Przed / po ---------- */
+  .ba { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 40px; align-items: start; }
+  .ba-col { background: var(--white); border: 1px solid var(--border); border-radius: var(--r-card); overflow: hidden; }
+  .ba-col header {
+    font-size: 12.5px; letter-spacing: .14em; text-transform: uppercase; font-weight: 600;
+    padding: 14px 24px; color: var(--gray); border-bottom: 1px solid var(--border);
+  }
+  .ba-col--after header { background: var(--cream); color: var(--gold-deep); }
+  .ba-text { padding: 24px; font-size: 17px; line-height: 1.9; }
+  .del { text-decoration: line-through; color: #9A9EA2; }
+  .ins { color: var(--gold-deep); font-weight: 600; }
+  .ba-comment {
+    margin: 0 24px 20px; background: var(--cream); border-radius: 12px;
+    padding: 16px 18px; font-size: 15px; line-height: 1.6;
+  }
+  .ba-comment strong {
+    display: block; font-size: 11.5px; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--gold-deep); margin-bottom: 4px;
+  }
+
+  /* ---------- O mnie (pasmo grafitowe) ---------- */
+  .about { display: grid; grid-template-columns: 340px minmax(0,1fr); gap: 64px; align-items: center; }
+  .about-photo {
+    width: 100%; aspect-ratio: 4/5; border-radius: var(--r-card);
+    overflow: hidden; background: #22252A;
+    justify-self: center; align-self: center;
+  }
+  .about-photo img { width: 100%; height: 100%; object-fit: cover; }
+  .about blockquote {
+    margin: 0 0 20px; padding: 0;
+    font-size: clamp(21px, 2.3vw, 27px); line-height: 1.45; font-weight: 500; color: var(--white);
+  }
+  .radio-inline {
+    margin-top: 28px; border: 1px solid rgba(255,255,255,.18); border-radius: var(--r-card);
+    padding: 24px 26px;
+  }
+  .radio-inline h3 { font-size: 17px; margin-bottom: 12px; }
+  .radio-inline ul { margin: 0; padding: 0; list-style: none; font-size: 15.5px; }
+  .radio-inline li { padding: 6px 0 6px 26px; position: relative; }
+  .radio-inline li::before {
+    content: "→"; position: absolute; left: 0; color: var(--gold); font-weight: 600;
+  }
+  .radio-inline a { color: var(--gold); }
+  .radio-inline a:hover { color: var(--white); }
+
+  /* ---------- FAQ ---------- */
+  .faq { max-width: 800px; margin-top: 40px; }
+  .faq details { border-bottom: 1px solid var(--border); }
+  .faq summary {
+    cursor: pointer; list-style: none;
+    display: flex; justify-content: space-between; align-items: center; gap: 24px;
+    padding: 22px 4px; font-weight: 600; font-size: 18px;
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after {
+    content: "+"; font-size: 26px; font-weight: 400; color: var(--gold-deep);
+    transition: transform .2s ease; flex: none;
+  }
+  .faq details[open] summary::after { transform: rotate(45deg); }
+  .faq details p { padding: 0 4px 24px; margin: 0; color: #3B3F44; max-width: 68ch; }
+
+  /* ---------- Opinie (karuzela) ---------- */
+  .carousel { max-width: 820px; margin: 40px auto 0; }
+  .carousel-viewport { overflow: hidden; }
+  .carousel-track {
+    display: flex; margin: 0; padding: 0; list-style: none;
+    transition: transform .45s cubic-bezier(.4,0,.2,1);
+  }
+  .quote { flex: 0 0 100%; min-width: 100%; padding: 0 4px; }
+  .quote blockquote {
+    margin: 0; background: var(--white); border-radius: var(--r-card);
+    padding: 40px; box-shadow: var(--shadow); text-align: left;
+    position: relative;
+  }
+  .quote blockquote::before {
+    content: ""; position: absolute; top: 0; left: 40px;
+    width: 44px; height: 3px; border-radius: 0 0 3px 3px;
+    background: var(--gold);
+  }
+  .quote blockquote p { font-size: 17.5px; line-height: 1.75; margin: 0 0 20px; position: relative; }
+  .quote footer { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; padding-top: 16px; border-top: 1px solid var(--border); }
+  .quote cite { font-style: normal; font-weight: 600; font-size: 16px; }
+  .quote .role { font-size: 14px; color: var(--gray); }
+  .carousel-nav { display: flex; align-items: center; justify-content: center; gap: 18px; margin-top: 28px; }
+  .carousel-btn {
+    width: 44px; height: 44px; border-radius: 50%; cursor: pointer;
+    background: var(--white); border: 1px solid var(--border); color: var(--graphite);
+    display: flex; align-items: center; justify-content: center;
+    transition: background-color .18s ease, border-color .18s ease;
+  }
+  .carousel-btn:hover { background: var(--gold); border-color: var(--gold); }
+  .carousel-dots { display: flex; gap: 9px; }
+  .carousel-dots button {
+    width: 9px; height: 9px; padding: 0; border-radius: 50%; cursor: pointer;
+    background: var(--border); border: 0;
+    transition: background-color .18s ease, transform .18s ease;
+  }
+  .carousel-dots button[aria-current="true"] { background: var(--gold-deep); transform: scale(1.35); }
+
+  /* ---------- Blog ---------- */
+  .posts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; }
+  .post {
+    background: var(--white); border: 1px solid var(--border); border-radius: var(--r-card);
+    padding: 28px; box-shadow: var(--shadow); display: flex; flex-direction: column;
+  }
+  .post .cat {
+    display: block; font-size: 12.5px; font-weight: 600; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--gold-deep); margin-bottom: 12px;
+  }
+  .post h3 { font-size: 20px; line-height: 1.35; }
+  .post p { font-size: 15.5px; color: #3B3F44; }
+  .post .more { margin-top: auto; padding-top: 12px; font-size: 15px; font-weight: 600; }
+  .posts-all { margin-top: 32px; }
+  .blog-soon {
+    margin-top: 32px; font-size: 15.5px; color: var(--gray);
+  }
+
+  /* ---------- Kontakt ---------- */
+  .contact-grid { display: grid; grid-template-columns: minmax(0,1fr) 440px; gap: 64px; align-items: start; }
+  .form {
+    background: var(--cream); border: 1px solid var(--border); border-radius: var(--r-card);
+    padding: 32px; box-shadow: var(--shadow);
+  }
+  .form .form-title { font-size: 22px; margin-bottom: 20px; }
+  .form label { display: block; font-weight: 600; font-size: 13.5px; letter-spacing: .04em; margin: 20px 0 8px; }
+  .form label:first-of-type { margin-top: 0; }
+  .form input, .form select, .form textarea {
+    width: 100%; font: inherit; font-size: 16px;
+    padding: 13px 14px; border: 1px solid var(--border); border-radius: var(--r-btn); background: var(--white);
+  }
+  .form textarea { min-height: 100px; resize: vertical; }
+  .form .btn { width: 100%; margin-top: 28px; }
+  .form .consent { display: flex; gap: 12px; align-items: flex-start; margin-top: 24px; }
+  .form .consent input { width: 18px; height: 18px; flex: none; margin-top: 3px; accent-color: var(--gold-deep); }
+  .form .consent label { margin: 0; font-weight: 400; font-size: 13.5px; line-height: 1.5; color: var(--gray); letter-spacing: 0; }
+
+  /* ---------- Stopka ---------- */
+  .site-footer { background: var(--graphite); color: #9BA0A5; padding: 56px 0 40px; font-size: 14.5px; }
+  .site-footer .wrap { display: grid; gap: 28px; }
+  .site-footer a { color: var(--gold); }
+  .footer-sign { color: var(--white); font-size: 16px; }
+  .footer-bottom {
+    display: flex; justify-content: space-between; gap: 12px 28px; flex-wrap: wrap;
+    border-top: 1px solid rgba(255,255,255,.14); padding-top: 24px;
+  }
+  .footer-bottom .credit { color: #7E838A; }
+  .footer-bottom .credit a { color: #A9AEB4; text-decoration-color: rgba(169,174,180,.5); }
+  .footer-bottom .credit a:hover { color: var(--gold); }
+  .ai-note { margin: 4px 0 0; font-size: 13px; color: #6E7378; }
+
+  /* ---------- Responsywność ---------- */
+  @media (max-width: 900px) {
+    .h2 { font-size: clamp(25px, 5.4vw, 32px); }
+    section { padding: 64px 0; }
+    .hero { padding: 48px 0 64px; }
+    .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+    .portrait { order: -1; }
+    .portrait-frame { max-width: 320px; }
+    .two-col, .offer-grid, .ba, .contact-grid, .posts { grid-template-columns: 1fr; }
+    .about { grid-template-columns: 1fr; gap: 36px; }
+    .about-photo { max-width: 300px; }
+  }
+</style>
+<style>
+  /* ---------- Portfolio ---------- */
+  .page-head { padding: 64px 0 8px; }
+  .breadcrumb { font-size: 14.5px; color: var(--gray); margin-bottom: 20px; }
+  .breadcrumb a { color: var(--gray); }
+  .breadcrumb a:hover { color: var(--gold-deep); }
+
+  .work {
+    display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 48px;
+    align-items: start;
+    background: var(--white); border: 1px solid var(--border); border-radius: var(--r-card);
+    padding: 40px; box-shadow: var(--shadow); margin-top: 40px;
+  }
+  .work-cover img {
+    width: 100%; height: auto; display: block;
+    border-radius: 8px; box-shadow: 0 8px 28px rgba(23,25,28,.16);
+  }
+  .work-role {
+    display: inline-block; font-size: 12.5px; font-weight: 600; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--gold-deep);
+    background: var(--cream); border-radius: 999px; padding: 5px 14px; margin-bottom: 14px;
+  }
+  .work h2 { font-size: clamp(24px, 3vw, 32px); margin-bottom: 4px; }
+  .work .author { font-size: 17px; color: var(--gray); margin-bottom: 20px; }
+  .work-meta { margin: 0 0 22px; padding: 0; list-style: none; }
+  .work-meta li { display: flex; gap: 10px; padding: 7px 0; border-bottom: 1px solid var(--soft); font-size: 15.5px; }
+  .work-meta dt, .work-meta .k { min-width: 118px; color: var(--gray); flex: none; }
+  .work-links { display: flex; gap: 12px; flex-wrap: wrap; }
+
+  .more-works { margin-top: 40px; }
+  .more-works h2 { font-size: 24px; margin-bottom: 6px; }
+  .more-works > p { color: var(--gray); font-size: 16px; max-width: 62ch; }
+  .work-list { margin: 20px 0 0; padding: 0; list-style: none; display: grid; gap: 12px; }
+  .work-list li {
+    background: var(--white); border: 1px solid var(--border); border-radius: 14px;
+    padding: 18px 22px; display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap;
+  }
+  .work-list .t { font-weight: 600; font-size: 17px; }
+  .work-list .a { color: var(--gray); font-size: 15.5px; }
+  .work-list .r {
+    margin-left: auto; font-size: 12px; font-weight: 600; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--gold-deep);
+    background: var(--cream); border-radius: 999px; padding: 4px 12px;
+  }
+
+  .empty-note {
+    margin-top: 40px; background: var(--cream); border-radius: var(--r-card);
+    padding: 32px; max-width: 780px;
+  }
+  .empty-note h3 { font-size: 19px; }
+  .empty-note p { margin: 8px 0 0; font-size: 16px; color: #3B3F44; }
+
+  .work--nocover { grid-template-columns: 1fr; }
+  .work--nocover .work-body { max-width: 74ch; }
+
+  @media (max-width: 760px) {
+    .work { grid-template-columns: 1fr; gap: 28px; padding: 28px; }
+    .work-cover { max-width: 220px; margin: 0 auto; }
+  }
+</style>
+</head>
+<body>
+
+<a class="skip" href="#tresc">Przejdź do treści</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="index.html" aria-label="Correct Way – korekta i redakcja tekstów, strona główna">
+      <img src="logo.png" alt="Correct Way – korekta i redakcja tekstów" width="938" height="255">
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="menu" aria-label="Otwórz menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav" id="menu" aria-label="Nawigacja główna">
+      <a href="index.html#opinie">Opinie</a>
+      <a href="portfolio.html" aria-current="page">Portfolio</a>
+      <a href="index.html#oferta">Oferta</a>
+      <a href="index.html#proces">Jak pracuję</a>
+      <a href="index.html#o-mnie">O mnie</a>
+      <a href="index.html#blog">Blog</a>
+      <a href="index.html#faq">FAQ</a>
+      <a class="btn" href="index.html#kontakt">Wyślij fragment</a>
+    </nav>
+  </div>
+</header>
+
+<main><span id="tresc"></span>
+
+<section class="page-head">
+  <div class="wrap">
+    <p class="breadcrumb"><a href="index.html">Strona główna</a> → Portfolio</p>
+    <span class="label">Portfolio</span>
+    <h1 class="h1" style="font-size:clamp(32px,4.4vw,50px);">Teksty, które przeszły<br>przez moje ręce</h1>
+    <p class="lead">Poniżej publikacje i projekty, przy których pracowałam jako korektorka i redaktorka. Każdą pozycję pokazuję za wiedzą autora lub wydawcy – bo tekst należy do nich, nie do mnie.</p>
+  </div>
+</section>
+
+<section style="padding-top:8px;">
+  <div class="wrap">
+    <article class="work">
+      <div class="work-cover">
+        <img src="poza-horyzontem.webp" alt="Okładka tomiku Poza horyzontem. Wiersze Angeli Fox" width="254" height="411">
+      </div>
+      <div>
+        <span class="work-role">Redakcja i korekta</span>
+        <h2>Poza horyzontem. Wiersze</h2>
+        <p class="author">Angela Fox</p>
+        <p>Tomik poezji przygotowany we współpracy z wydawnictwem DC Books. Praca nad wierszami to szczególny rodzaj korekty: interpunkcja bywa tu środkiem wyrazu, a nie tylko regułą, więc każdą propozycję zmiany trzeba przyłożyć do intencji autorki. Tam, gdzie zapis odbiega od normy świadomie, zostaje – moim zadaniem było usunąć potknięcia, nie wyrównać poetykę do podręcznika.</p>
+        <ul class="work-meta">
+          <li><span class="k">Rodzaj tekstu</span><span>tomik poezji</span></li>
+          <li><span class="k">Zakres pracy</span><span>redakcja i korekta</span></li>
+          <li><span class="k">Wydawnictwo</span><span>DC Books</span></li>
+        </ul>
+        <div class="work-links">
+          <a class="btn btn--outline" href="https://nakanapie.pl/ksiazka/poza-horyzontem-wiersze" target="_blank" rel="noopener">Zobacz książkę na NaKanapie →</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="work">
+      <div class="work-cover">
+        <img src="planeta-mepli.webp" alt="Okładka magazynu Planeta Mepli, numer 8/2026" width="460" height="651" loading="lazy">
+      </div>
+      <div class="work-body">
+        <span class="work-role">Korekta · współpraca stała</span>
+        <h2>Planeta Mepli</h2>
+        <p class="author">Magazyn o grach planszowych</p>
+        <p>Bezpłatny magazyn tworzony przez graczy dla graczy – recenzje gier, rozmowy z twórcami, nowinki z branży i relacje z planszówkowych wydarzeń. Pracuję w zespole korektorskim nad kolejnymi numerami: to teksty wielu różnych autorów, więc obok wyłapywania błędów liczy się ujednolicanie zapisu – tytułów gier, terminów branżowych, liczb i nazw wydawnictw – tak żeby cały numer czytał się jak jedna publikacja, a nie zbiór osobnych artykułów.</p>
+        <ul class="work-meta">
+          <li><span class="k">Rodzaj tekstu</span><span>magazyn cykliczny, teksty publicystyczne i recenzje</span></li>
+          <li><span class="k">Zakres pracy</span><span>korekta w zespole redakcyjnym</span></li>
+          <li><span class="k">Charakter</span><span>współpraca ciągła, numer po numerze</span></li>
+          <li><span class="k">Na okładce</span><span>numer 8/2026</span></li>
+        </ul>
+        <div class="work-links">
+          <a class="btn btn--outline" href="https://planetamepli.pl/" target="_blank" rel="noopener">Zobacz magazyn →</a>
+          <a class="btn btn--outline" href="https://planetamepli.pl/nasz-zespol/" target="_blank" rel="noopener">Zespół redakcyjny →</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- [DO UZUPEŁNIENIA] „Mój kumpel kapsel" i „Chłopiec, którego nie było" (Piotrek Cajdler)
+         są na razie w prostej liście „Pozostałe realizacje" na dole strony – brakuje zakresu pracy
+         (korekta czy też redakcja?), wydawnictwa, roku i okładek. Po uzupełnieniu przenieś je
+         do pełnych kart <article class="work"> jak dwie pozycje powyżej. -->
+
+    <!-- [DO ROZBUDOWY] Kolejne realizacje: skopiuj blok <article class="work"> powyżej,
+         podmień okładkę, tytuł, autora, opis i metadane. Przy tekstach firmowych
+         (strony WWW, e-booki) wystarczy nazwa klienta i zakres pracy – bez okładki
+         można użyć bloku bez .work-cover i zmienić grid na jedną kolumnę. -->
+
+    <div class="more-works">
+      <h2>Pozostałe realizacje</h2>
+      <ul class="work-list">
+        <li>
+          <span class="t">Mój kumpel kapsel</span>
+          <span class="a">Piotrek Cajdler</span>
+          <span class="r">Korekta</span>
+        </li>
+        <li>
+          <span class="t">Chłopiec, którego nie było</span>
+          <span class="a">Piotrek Cajdler</span>
+          <span class="r">Korekta</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="empty-note">
+      <h3>Pracowaliśmy razem, a Twojego tekstu tu nie ma?</h3>
+      <p>Nie każdą realizację mogę pokazać – część tekstów objęta jest poufnością, a przy innych po prostu nie mam jeszcze zgody na publikację. Jeśli chcesz, żeby Twój projekt się tu znalazł, napisz: chętnie dodam.</p>
+    </div>
+
+    <p style="margin-top:40px;"><a class="btn" href="index.html#kontakt">Wyślij fragment do próbnej korekty</a></p>
+  </div>
+</section>
+
+</main>
+
+
+
+<script>
+  var t = document.querySelector('.nav-toggle');
+  t.addEventListener('click', function () {
+    var open = document.body.classList.toggle('nav-open');
+    t.setAttribute('aria-expanded', open);
+    t.setAttribute('aria-label', open ? 'Zamknij menu' : 'Otwórz menu');
+  });
+  document.querySelectorAll('.nav a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      document.body.classList.remove('nav-open');
+      t.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
+
+</body>
+</html>
