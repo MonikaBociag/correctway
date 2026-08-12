@@ -29,8 +29,11 @@ Wszystkie pliki muszą leżeć w jednym katalogu — odwołania w kodzie są wzg
 1. Utwórz repozytorium na GitHubie i wgraj zawartość tego katalogu.
 2. W Vercelu: **Add New → Project → import repozytorium**. Framework preset: **Other**.
 3. Podepnij domenę w **Settings → Domains**.
-4. Podmień adres `https://correctway.pl` w `index.html`, `portfolio.html`, `robots.txt`
-   i `sitemap.xml`, jeśli domena będzie inna (canonical, Open Graph, dane strukturalne).
+4. **Jeśli domena będzie inna niż `correctway.pl`**, podmień ten adres w czterech plikach:
+   `index.html`, `portfolio.html`, `robots.txt`, `sitemap.xml`. Najprościej: funkcja
+   „znajdź i zamień” w edytorze, szukając `correctway.pl`. Adres występuje w znaczniku
+   canonical, w danych Open Graph i w danych strukturalnych — wszystkie muszą wskazywać
+   tę samą domenę.
 
 Uwaga: subdomena `*.vercel.app` celowo nie indeksuje się w Google — to normalne do czasu
 podpięcia własnej domeny.
@@ -40,10 +43,10 @@ treści panel Vercela nie jest potrzebny.
 
 ## Do uzupełnienia przed premierą
 
-- [ ] **Formularz kontaktowy** — w `index.html` w atrybucie `action` formularza stoi
-      `https://formspree.io/f/[WSTAW-ID]`. Po założeniu konta w Formspree wstaw tam
-      identyfikator formularza. W kodzie obok znajduje się gotowy tekst potwierdzenia
-      do wklejenia w ustawieniach usługi.
+- [x] **Formularz kontaktowy** — podłączony do Formspree (`xbgrylzr`). Wysyłka odbywa się
+      w tle, podziękowanie pojawia się pod formularzem. Po wdrożeniu wyślij testowe
+      zgłoszenie: Formspree przy pierwszym zgłoszeniu prosi o potwierdzenie adresu
+      odbiorcy, a warto też sprawdzić, czy wiadomość nie wpada do spamu.
 - [ ] **Polityka prywatności** — plik `polityka-prywatnosci.html` (linki w stopce i pod
       formularzem już do niego prowadzą). Musi zawierać dane administratora danych,
       bo formularz zbiera dane osobowe. Wymagana od dnia premiery.

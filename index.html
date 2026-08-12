@@ -498,6 +498,9 @@
   }
   .form textarea { min-height: 100px; resize: vertical; }
   .form .btn { width: 100%; margin-top: 28px; }
+  .form .form-msg { margin: 20px 0 0; padding: 16px 18px; border-radius: 12px; font-size: 15.5px; line-height: 1.6; }
+  .form .form-msg--ok { background: var(--cream); border-left: 3px solid var(--gold); }
+  .form .form-msg--err { background: #FBEDEA; border-left: 3px solid #B4452F; }
   .form .consent { display: flex; gap: 12px; align-items: flex-start; margin-top: 24px; }
   .form .consent input { width: 18px; height: 18px; flex: none; margin-top: 3px; accent-color: var(--gold-deep); }
   .form .consent label { margin: 0; font-weight: 400; font-size: 13.5px; line-height: 1.5; color: var(--gray); letter-spacing: 0; }
@@ -965,11 +968,10 @@
       <p class="lead">Napisz mi w kilku zdaniach, z jakim tekstem pracujesz – odpowiadam w ciągu 48 godzin i poproszę o fragment do bezpłatnej próbnej korekty. Zobaczysz efekt i zdecydujesz, czy chcesz iść dalej. Bez zobowiązań i bez zgadywania. Jeśli wolisz, napisz po prostu maila: <a href="mailto:korekta.bociag@gmail.com">korekta.bociag@gmail.com</a>.</p>
       <p class="muted">Wiem, że oddanie komuś swojego tekstu wymaga zaufania. Twoje pliki trafiają tylko do mnie i służą wyłącznie przygotowaniu próbnej korekty.</p>
     </div>
-    <!-- [KONFIGURACJA] Formularz: podmień action na endpoint Formspree/Basin
-         (statyczny hosting nie wysyła formularzy samodzielnie).
-         Załączniki: Formspree obsługuje pliki w planie płatnym; alternatywnie
-         poproś o link do dokumentu w polu opisu. -->
-    <form class="form" action="https://formspree.io/f/[WSTAW-ID]" method="POST">
+    <!-- Formularz obsługiwany przez Formspree. Wysyłka odbywa się w tle (skrypt na końcu
+         pliku), więc klient zostaje na stronie i widzi podziękowanie poniżej formularza.
+         Gdyby JavaScript był wyłączony, formularz wyśle się klasycznie na stronę Formspree. -->
+    <form class="form" action="https://formspree.io/f/xbgrylzr" method="POST" data-ajax>
       <p class="form-title">Prześlij próbkę</p>
 
       <label for="cw-name">Imię</label>
@@ -986,11 +988,13 @@
         <label for="cw-rodo">Zgadzam się na przetwarzanie moich danych w celu odpowiedzi na zapytanie, zgodnie z <a href="/polityka-prywatnosci.html">polityką prywatności</a>.</label>
       </div>
 
+      <!-- pułapka na roboty: pole ukryte, człowiek go nie wypełni -->
+      <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;">
+
       <button class="btn" type="submit">Wyślij wiadomość</button>
-      <!-- [KONFIGURACJA] Tekst potwierdzenia po wysłaniu (ustaw w Formspree jako custom "thank you"):
-           „Dziękuję! Twoja wiadomość do mnie dotarła. Przeczytam ją uważnie i wrócę z odpowiedzią
-           oraz prośbą o fragment do próbnej korekty – zobaczysz dokładnie, co i dlaczego bym
-           poprawiła. Potem wszystkie decyzje należą do Ciebie." -->
+
+      <p class="form-msg form-msg--ok" hidden>Dziękuję! Twoja wiadomość do mnie dotarła. Przeczytam ją uważnie i wrócę z odpowiedzią oraz prośbą o fragment do próbnej korekty – zobaczysz dokładnie, co i dlaczego bym poprawiła. Potem wszystkie decyzje należą do Ciebie.</p>
+      <p class="form-msg form-msg--err" hidden>Nie udało się wysłać wiadomości. Napisz proszę bezpośrednio na <a href="mailto:korekta.bociag@gmail.com">korekta.bociag@gmail.com</a> – odpowiem tak samo szybko.</p>
     </form>
   </div>
 </section>
@@ -1053,6 +1057,40 @@
     });
 
     go(0);
+  });
+
+  document.querySelectorAll('form[data-ajax]').forEach(function (f) {
+    var btn = f.querySelector('button[type="submit"]');
+    var ok = f.querySelector('.form-msg--ok');
+    var err = f.querySelector('.form-msg--err');
+    var label = btn ? btn.textContent : '';
+
+    f.addEventListener('submit', function (e) {
+      e.preventDefault();
+      ok.hidden = true; err.hidden = true;
+      btn.disabled = true;
+      btn.textContent = 'Wysyłam…';
+
+      fetch(f.action, {
+        method: 'POST',
+        body: new FormData(f),
+        headers: { Accept: 'application/json' }
+      }).then(function (r) {
+        if (!r.ok) throw new Error('blad');
+        f.querySelectorAll('input, textarea').forEach(function (el) {
+          if (el.type === 'checkbox') { el.checked = false; } else { el.value = ''; }
+        });
+        ok.hidden = false;
+        ok.setAttribute('role', 'status');
+        ok.scrollIntoView({ block: 'nearest' });
+      }).catch(function () {
+        err.hidden = false;
+        err.setAttribute('role', 'alert');
+      }).then(function () {
+        btn.disabled = false;
+        btn.textContent = label;
+      });
+    });
   });
 
   document.querySelectorAll('.nav a').forEach(function (a) {
